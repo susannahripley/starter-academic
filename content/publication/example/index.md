@@ -1,20 +1,25 @@
 ---
-title: "An example conference paper"
+title: "Blood and hair mercury concentrations among Cree First Nations of Eeyou Istchee (Quebec, Canada): time trends, prenatal exposure and links to local fish consumption"
 
 # Authors
-# If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 
-# and it will be replaced with their full name and linked to their profile.
+
 authors:
-- admin
-- Robert Ford
+- Ripley, S.
+- Robinson, E.
+- Johnson-Down, L.
+- Andermann, A.
+- Ayotte, P.
+- Lucas, M.
+- Nieboer, E.
 
 # Author notes (optional)
-author_notes:
-- "Equal contribution"
-- "Equal contribution"
+#author_notes:
+#- "Equal contribution"
+#- "Equal contribution"
 
-date: "2013-07-01T00:00:00Z"
-doi: ""
+date: "2018-05-23T00:00:00Z"
+doi: "10.1080/22423982.2018.1474706"
+
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2017-01-01T00:00:00Z"
@@ -23,13 +28,15 @@ publishDate: "2017-01-01T00:00:00Z"
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ["1"]
+publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *Wowchemy Conference*
-publication_short: In *ICW*
+publication: In *International Journal of Circumpolar Health*
+publication_short: In *Int J Circumpolar Health*
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: To describe exposure to methylmercury among Cree, focusing on women of childbearing age, we used data from 2 studies. Multiple regression was employed to examine associations between blood and hair mercury concentrations and consumption of locally harvested fish. Approximately 9.9% of non-pregnant women aged 15–44 y and 3.9% of pregnant women
+required follow-up according to Health Canada’s blood mercury guidance value of 40 nmol/L. 8% of hair mercury observations in the non-pregnant women and 2.5% among pregnant women exceeded the equivalent threshold of 10 nmol/g. The geometric mean blood mercury concentration was 12.7 nmol/L in 1,429 persons aged 8 and over, and 17.7 nmol/L in adults aged 18 and older. The proportion of hair mercury concentrations greater than 12.5 nmol/g decreased in all age-sex groups when comparing the 2002–2009 data to published values for 1993–1994. Among women of childbearing age, local fish consumption was associated with increased blood and hair mercury concentrations. While over 90% of women of childbearing age in this population have acceptable levels of
+mercury, ongoing intake of mercury suggests that their consumption of fish with known high mercury content be minimised. Reducing consumption of fish known to be high in mercury content needs to be balanced with promoting ongoing connection to Cree culture and landbased activities that are also important determinants of health.
 
 # Summary. An optional shortened abstract.
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.

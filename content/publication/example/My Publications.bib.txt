@@ -1,4 +1,4 @@
-@article{RN1,
+﻿@article{RN1,
    author = {Gao, D. and Ripley, S. and Weichenthal, S. and Godri Pollitt, K. J.},
    title = {Ambient particulate matter oxidative potential: Chemical determinants, associated health effects, and strategies for risk management},
    journal = {Free Radic Biol Med},
