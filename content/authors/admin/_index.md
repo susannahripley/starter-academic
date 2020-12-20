@@ -58,10 +58,10 @@ social:
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: "susannah.ripley@mail.mcgill.ca"
 
 # Highlight the author in author lists? (true/false)
-highlight_name: false
+highlight_name: true
 ---
 
 I am a PhD student in environmental epidemiology at McGill University. My research interests include health effects of environmental exposures, in particular air pollution, and spatial data analysis.
