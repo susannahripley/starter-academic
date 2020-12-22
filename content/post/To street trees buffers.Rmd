@@ -1,0 +1,120 @@
+---
+title: "Counting Points In a Buffer"
+author: "Susannah Ripley"
+date: "20/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+The City of Toronto has an amazing database of all the trees on road allowances. This database has over half a million trees with species and trunk diameter. If you're a Toronto resident, you can look up trees near you [here](http://trees.jordanteichmann.ca/).
+
+I am interested in seeing if the abundance of these urban trees might be a useful predictor in a land-use regression model.  
+
+I have air pollutants measured at 60 sites across the city. My goal is to count the number of trees within a 500 m radius of each of these points. I then want to assign this count value to a variable in my dataset.  
+
+We will need the **SimpleFeatures (sf)** package as well as the **tidyverse** package.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(sf)
+library(rgdal)
+```
+
+## Load my dataset of points
+
+My dataset consists of geographic coordinates as latitude and longitude, as well as a pollutant concentration measured at each location.
+
+```{r cars}
+df <- read.csv("./data/points.csv")
+head(df)
+```
+
+## Make 500 m buffers around the points
+
+We currently have points as a dataframe. We will use the st_as_sf function to convert this dataframe to a spatial object. 
+
+```{r}
+pointsto <-  st_as_sf(df, coords = c("longitude", "latitude"), crs="NAD83") 
+str(pointsto)
+```
+
+Currently the coordinates are expressed as latitude and longitude. To use the **st_buffer** function that we will use to create a buffer around each point, it is easiest if we have a coordinate system that has meters as units of measurements (like UTM). 
+
+Toronto is in UTM zone 17N, which is represented by EPSG 32617. We will transform the points object into this projection.
+
+```{r}
+pointsto <- st_transform(pointsto, crs=32617)
+```
+
+Now we can create the buffers. The function **st_buffer** takes 2 arguments: the object around which buffers are to be made, and the buffer distance. I chose a buffer of radius 500 m but you can specify whatever distance your heart desires. 
+
+```{r}
+buffsto500 <- st_buffer(pointsto, dist=500)
+```
+
+Let's map this to make sure everything looks good.
+
+```{r}
+ggplot() +
+  geom_sf(data=buffsto500, color="pink") +
+  geom_sf(data=pointsto) 
+```
+
+## Add Toronto Street Trees Data
+
+Next up we will download the Street Trees data from the City of Toronto's Open Data Portal. 
+
+```{r}
+URL <- "https://ckan0.cf.opendata.inter.prod-toronto.ca/download_resource/c1229af1-8ab6-4c71-b131-8be12da59c8e"
+download.file(url=URL, destfile="./data/TO street trees.zip", mode="wb")
+
+trees <- unzip(zipfile="./data/TO street trees.zip", exdir = "./data/trees")
+trees <- readOGR("./data/trees")
+# Make it into a spatial SimpleFeatures object
+trees <- st_as_sf(trees, crs="WGS84")
+# Reproject to UTM
+trees <- st_transform(trees, crs=32617)
+str(trees)
+```
+
+You can see that this dataset has 1 line per tree. Let's plot it to see where the trees are, and because it looks cool.
+
+```{r}
+ggplot() + geom_sf(data=trees, color="darkgreen", alpha=0.05, shape=".")
+```
+
+Very cool.
+
+## Count number of rows of trees dataset within the buffer
+
+We will use the function **st_intersects** to determine how many elements of the *trees* dataset fall within or on the border of the 500 m buffer around each point. Then we will count the length of each intersection and create a new variable representing this count.
+
+```{r}
+df$trees_count_500m <- lengths(st_intersects(buffsto500, trees))
+buffsto500$trees_count_500m <- lengths(st_intersects(buffsto500, trees))
+```
+
+Let's do a histogram to examine the frequency of different tree counts.  
+
+```{r}
+ggplot() +
+  geom_histogram(data=df, aes(x=trees_count_500m), fill="darkgreen") +
+  labs(x="Count of trees in 500 m buffer", y="Number of points", main="Frequency of tree counts in 500 m buffers") +
+  theme_minimal()
+```
+
+Finally, we will map the count of trees within each buffer to visualize the data.
+
+```{r}
+ggplot() +
+  geom_sf(data=buffsto500, aes(fill=trees_count_500m)) +
+  scale_fill_distiller(palette="Greens", direction = 1) +
+  geom_sf(data=pointsto) +
+  labs(main="Toronto Tree Count In 500 m Buffer") + 
+  labs(fill="Trees in 500 m buffer")
+```
