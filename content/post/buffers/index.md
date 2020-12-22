@@ -1,5 +1,7 @@
 ---
 ---
+title: Counting points within a buffer using Simple Features for R
+
 <!DOCTYPE html>
 
 <html>
