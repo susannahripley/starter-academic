@@ -6,7 +6,7 @@ title: Susannah Ripley
 superuser: true
 
 # Role/position/tagline
-role: PhD Student
+role: PhD Candidate in Epidemiology at McGill University
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,7 +14,7 @@ organizations:
   url: https://www.mcgill.ca/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include environmental epidemiology and spatial data analysis
+bio: Environmental epidemiology and spatial data analysis in R
 
 # Interests to show in About widget
 interests:

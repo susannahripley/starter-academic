@@ -37,7 +37,7 @@ publication_short: In *Int J Circumpolar Health*
 abstract: To describe exposure to methylmercury among Cree, focusing on women of childbearing age, we used data from 2 studies. Multiple regression was employed to examine associations between blood and hair mercury concentrations and consumption of locally harvested fish. Approximately 9.9% of non-pregnant women aged 15–44 y and 3.9% of pregnant women required follow-up according to Health Canada’s blood mercury guidance value of 40 nmol/L. 8% of hair mercury observations in the non-pregnant women and 2.5% among pregnant women exceeded the equivalent threshold of 10 nmol/g. The geometric mean blood mercury concentration was 12.7 nmol/L in 1,429 persons aged 8 and over, and 17.7 nmol/L in adults aged 18 and older. The proportion of hair mercury concentrations greater than 12.5 nmol/g decreased in all age-sex groups when comparing the 2002–2009 data to published values for 1993–1994. Among women of childbearing age, local fish consumption was associated with increased blood and hair mercury concentrations. While over 90% of women of childbearing age in this population have acceptable levels of mercury, ongoing intake of mercury suggests that their consumption of fish with known high mercury content be minimised. Reducing consumption of fish known to be high in mercury content needs to be balanced with promoting ongoing connection to Cree culture and landbased activities that are also important determinants of health.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: We examined exposure to methylmercury in the Cree of Eeyous Istchee (James Bay region, Quebec). We found exposure to methylmercury has decreased over time. Balancing traditional local food consumption with reducing mercury exposure is an important consideration.
 
 tags: []
 
@@ -61,7 +61,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
+  caption: 'Image credit: Waskaganish, Eeyou istchee'
   focal_point: ""
   preview_only: false
 
