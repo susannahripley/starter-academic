@@ -1,6 +1,11 @@
 ---
 ---
+title: Counting points within a buffer using Simple Features for R
 
+# Summary for listings and search engines
+summary: I walk through using the sf package in R to count trees that fall within spatial buffers.
+
+featured: true
 
 <!DOCTYPE html>
 
